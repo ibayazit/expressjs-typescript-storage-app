@@ -1,0 +1,22 @@
+services:
+  mongodb:
+    image: mongo
+    expose:
+      - 27017:27017
+    networks:
+      - appnet
+
+  api:
+    depends_on:
+      - mongodb
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - ${APP_PORT}:${APP_PORT}
+    networks:
+      - appnet
+
+networks:
+  appnet:
+    driver: bridge

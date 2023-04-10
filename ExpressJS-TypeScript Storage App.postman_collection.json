@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "eb7126a5-3b42-4acc-a536-1339837650f3",
+		"name": "ExpressJS-TypeScript Storage App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Images",
+			"item": [
+				{
+					"name": "Get Images",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/image",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Image",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/image/6431d3b5f5afbe7384e61b46?secret=123",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"image",
+								"6431d3b5f5afbe7384e61b46"
+							],
+							"query": [
+								{
+									"key": "secret",
+									"value": "123"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Image",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "secret",
+									"value": "123",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/image",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Image",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "secret",
+									"value": "567",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/image/6431b996130c593806c5c386",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"image",
+								"6431b996130c593806c5c386"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Image",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/image/6433bd0622fc6fabc731ba50",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"image",
+								"6433bd0622fc6fabc731ba50"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://localhost:3000/v1",
+			"type": "default"
+		}
+	]
+}
